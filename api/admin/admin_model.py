@@ -5,17 +5,17 @@ from sqlalchemy.orm import relationship
 class Admin(Base):
     __tablename__ = "admin"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    email = Column(String)
-    phone_number = Column(Integer)
-    username = Column(String)
-    password = Column(String)
-    is_active = Column(Boolean)
-    is_deleted = Column(Boolean)
+    id = Column(Integer, primary_key=True, index=True, nullable=False)
+    name = Column(String,nullable=False)
+    email = Column(String,nullable=False, unique=True)
+    phone_number = Column(String,nullable=False, unique=True)
+    username = Column(String, nullable=False, unique=True)
+    password = Column(String, nullable=False)
+    is_active = Column(Boolean, default=False)
+    is_deleted = Column(Boolean, default=False)
     Created_at = Column(DateTime)
     Created_by = Column(Integer)
-    updated_at = Column(Integer)
+    updated_at = Column(DateTime)
     updated_by = Column(Integer)
 
     admin_teacher = relationship("Teacher", back_populates="teacher_admin")

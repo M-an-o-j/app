@@ -21,10 +21,11 @@ class Validations:
                     return False
                 
         def login_validation(Self,user):
-            if user.is_active == True:
-                return True
-            else:
-                return False
+            if user:
+                if user.is_active == True:
+                    return True
+                else:
+                    return False
             
         def User_delete_validation(self, user):
             if user.is_deleted == True:

@@ -1,7 +1,7 @@
-from api.marklist.marklist_router import *
-from api.students.student_router import *
-from api.teachers.teacher_router import *
 from api.admin.admin_router import *
+from api.teachers.teacher_router import *
+from api.students.student_router import *
+from api.marklist.marklist_router import *
 from configuration.config import *
 import uvicorn
 

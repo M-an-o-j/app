@@ -6,9 +6,9 @@ class Marklist(Base):
     __tablename__ = "marklist"
 
     id = Column(Integer, primary_key=True, index=True)
-    student_id = Column(Integer, ForeignKey("students.id"))
-    subject_id = Column(Integer)
-    mark = Column(Integer)
+    student_id = Column(Integer, ForeignKey("students.id"), nullable=False)
+    subject_id = Column(Integer, nullable=False)
+    mark = Column(Integer, nullable=False)
     created_by = Column(Integer, ForeignKey("teachers.id"))
     created_at = Column(DateTime)
     updated_by = Column(Integer)
